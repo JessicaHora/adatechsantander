@@ -119,6 +119,7 @@ def atualizar_rendimentos():
             reg["valor"] = reg["valor"] * ((1 + reg["juros"]) ** dias)
     salvar_dados(data)
 
+# ... (restante das funções)
 
 # Exemplo de uso
 if __name__ == "__main__":
