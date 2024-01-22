@@ -97,6 +97,14 @@
             "tipo": "investimento",
             "valor": 300.0,
             "juros": 0.05
+        },
+        {
+            "id": 15,
+            "date": "2024-01-22",
+            "type": "receita",
+            "value": 50.0,
+            "interest_rate": null,
+            "original_value": null
         }
     ]
 }
