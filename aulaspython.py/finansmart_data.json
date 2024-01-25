@@ -1,0 +1,12 @@
+{
+    "registros": [
+        {
+            "id": 1,
+            "date": "2024-01-22",
+            "type": "investimento",
+            "value": 1000.0,
+            "interest_rate": 2.0,
+            "original_value": 1000.0
+        }
+    ]
+}

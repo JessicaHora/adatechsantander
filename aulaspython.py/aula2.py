@@ -33,15 +33,7 @@ class Finansmart:
         for record in self.data["registros"]:
             if filter_by and record.get(filter_by) != filter_value:
                 continue
-            
-            print(f"ID: {record['id']}")
-            print(f"Data: {record['date']}")
-            print(f"Tipo: {record['type']}")
-            print(f"Valor: {record['value']}")
-            if record['type'] == 'investimento':
-                print(f"Taxa de Juros: {record['interest_rate']}")
-                print(f"Valor Original: {record['original_value']}")
-            print("-" * 30)  # Separador entre registros
+            print(record)
 
     def update_record(self, record_id, new_value, new_type):
         found = False
@@ -65,44 +57,5 @@ class Finansmart:
         else:
             self.save_data()
 
-def main():
-    finansmart = Finansmart()
 
-    while True:
-        print("\nFinansmart - Sistema de Gerenciamento Financeiro")
-        print("1. Adicionar Registro")
-        print("2. Ler Registros")
-        print("3. Atualizar Registro")
-        print("4. Deletar Registro")
-        print("5. Sair")
-        escolha = input("Escolha uma opção: ")
 
-        if escolha == '1':
-            tipo = input("Digite o tipo (receita/despesa/investimento): ")
-            valor = float(input("Digite o valor: "))
-            if tipo == "investimento":
-                juros = float(input("Digite a taxa de juros (como decimal): "))
-                finansmart.add_record(tipo, valor, juros)
-            else:
-                finansmart.add_record(tipo, valor)
-
-        elif escolha == '2':
-            finansmart.read_records()
-
-        elif escolha == '3':
-            id_registro = int(input("Digite o ID do registro a ser atualizado: "))
-            novo_valor = float(input("Digite o novo valor: "))
-            novo_tipo = input("Digite o novo tipo (receita/despesa/investimento): ")
-            finansmart.update_record(id_registro, novo_valor, novo_tipo)
-
-        elif escolha == '4':
-            id_registro = int(input("Digite o ID do registro a ser deletado: "))
-            finansmart.delete_record(id_registro)
-
-        elif escolha == '5':
-            break
-        else:
-            print("Opção inválida. Tente novamente.")
-
-if __name__ == "__main__":
-    main()
