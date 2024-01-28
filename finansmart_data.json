@@ -58,7 +58,7 @@
         },
         {
             "id": 8,
-            "date": "2024-01-26",
+            "date": "2024-01-28",
             "type": "despesa",
             "value": -2000.0,
             "interest_rate": null,
