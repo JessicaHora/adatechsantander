@@ -33,7 +33,15 @@ class Finansmart:
         for record in self.data["registros"]:
             if filter_by and record.get(filter_by) != filter_value:
                 continue
-            print(record)
+            
+            print(f"ID: {record['id']}")
+            print(f"Data: {record['date']}")
+            print(f"Tipo: {record['type']}")
+            print(f"Valor: {record['value']}")
+            if record['type'] == 'investimento':
+                print(f"Taxa de Juros: {record['interest_rate']}")
+                print(f"Valor Original: {record['original_value']}")
+            print("-" * 30)  # Separador entre registros
 
     def update_record(self, record_id, new_value, new_type):
         found = False
